@@ -61,7 +61,7 @@ jobs:
         run: npm run build:analyze
 
       - name: Upload bundle analysis
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: bundle-analysis
           path: dist/stats.html
@@ -91,7 +91,7 @@ jobs:
           node --prof-process isolate-*.log > memory-profile.txt
 
       - name: Upload memory profile
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: memory-profile
           path: memory-profile.txt
