@@ -4,7 +4,11 @@
  * Prepare data for content status distribution chart
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const prepareStatusChartData = (drafts: number, published: number, scheduled: number): any => {
+export const prepareStatusChartData = (
+  drafts: number,
+  published: number,
+  scheduled: number
+): any => {
   return {
     labels: ['Drafts', 'Published', 'Scheduled'],
     datasets: [
@@ -23,7 +27,9 @@ export const prepareStatusChartData = (drafts: number, published: number, schedu
  * Prepare data for platform distribution chart
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const preparePlatformChartData = (platformData: { platform: string; count: number }[]): any => {
+export const preparePlatformChartData = (
+  platformData: { platform: string; count: number }[]
+): any => {
   return {
     labels: platformData.map((item) => item.platform),
     datasets: [
@@ -42,7 +48,9 @@ export const preparePlatformChartData = (platformData: { platform: string; count
  * Prepare data for engagement over time chart
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const prepareEngagementChartData = (data: { date: string; views: number; engagement: number }[]): any => {
+export const prepareEngagementChartData = (
+  data: { date: string; views: number; engagement: number }[]
+): any => {
   return {
     labels: data.map((item) => item.date),
     datasets: [
@@ -70,7 +78,9 @@ export const prepareEngagementChartData = (data: { date: string; views: number; 
  * Prepare data for content growth chart
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const prepareGrowthChartData = (data: { date: string; total: number; published: number }[]): any => {
+export const prepareGrowthChartData = (
+  data: { date: string; total: number; published: number }[]
+): any => {
   return {
     labels: data.map((item) => item.date),
     datasets: [

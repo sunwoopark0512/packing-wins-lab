@@ -33,13 +33,13 @@ cd packing-wins-lab
 
 ## Documentation
 
-| Document | Description |
-|----------|-------------|
-| [RUNBOOK.md](RUNBOOK.md) | Daily operations guide (30-60min loop) |
-| [RUNBOOK_DAY0.md](RUNBOOK_DAY0.md) | Day 0 boot and setup instructions |
-| [TASK.md](TASK.md) | Today's tasks and TiCo tracking |
-| [BACKLOG.md](BACKLOG.md) | Project backlog (30 items) |
-| [CHANGELOG.md](CHANGELOG.md) | Version history and changes |
+| Document                           | Description                            |
+| ---------------------------------- | -------------------------------------- |
+| [RUNBOOK.md](RUNBOOK.md)           | Daily operations guide (30-60min loop) |
+| [RUNBOOK_DAY0.md](RUNBOOK_DAY0.md) | Day 0 boot and setup instructions      |
+| [TASK.md](TASK.md)                 | Today's tasks and TiCo tracking        |
+| [BACKLOG.md](BACKLOG.md)           | Project backlog (30 items)             |
+| [CHANGELOG.md](CHANGELOG.md)       | Version history and changes            |
 
 ## Available Scripts
 
@@ -162,6 +162,7 @@ Before deploying, verify your installation:
 ```
 
 This script checks:
+
 - Core documentation files
 - Script availability
 - Evaluation assets
@@ -216,6 +217,7 @@ MIT License - see [LICENSE](LICENSE) file for details.
 ## Support
 
 For questions or support:
+
 1. Check [RUNBOOK.md](RUNBOOK.md) for daily operations
 2. Check [RUNBOOK_DAY0.md](RUNBOOK_DAY0.md) for setup issues
 3. Review [CHANGELOG.md](CHANGELOG.md) for recent changes

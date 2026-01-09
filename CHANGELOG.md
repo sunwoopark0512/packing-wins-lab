@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.1.1] - 2026-01-09
 
 ### Added
+
 - Feedback Playbook v1.1.1 package with comprehensive templates
 - Verify script (`verify-feedback-pack.ps1`) for package validation
 - GitHub Actions workflows for regression and performance testing
@@ -20,14 +21,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - TASK.md template for daily tracking
 
 ### Changed
+
 - Updated documentation structure for better organization
 - Improved script modularity and reusability
 - Enhanced error handling in all scripts
 
 ### Fixed
+
 - Initial release setup and configuration
 
 ### Security
+
 - Added sensitive data filtering in data generation scripts
 - Implemented content validation gates for publish operations
 
@@ -36,6 +40,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.1.0] - 2026-01-08
 
 ### Added
+
 - Initial project structure
 - Basic publish gate functionality
 - Core documentation files
@@ -45,5 +50,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2026-01-01
 
 ### Added
+
 - Project initialization
 - Core framework setup

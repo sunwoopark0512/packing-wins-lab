@@ -1,7 +1,9 @@
 ﻿# YT Longform Candidate (Pack 01)
+
 **Eligibility**: Only if Shorts version hits Top 20% Retention.
 
 ## Outline: Ultimate Guide to Compression Cubes
+
 1. Intro: The Math of Packing (Volume vs Weight).
 2. Demo: Standard Packing vs Compression Cubes.
 3. Stress Test: Can it handle a 2-week trip load?

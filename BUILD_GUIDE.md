@@ -133,11 +133,13 @@ npm run playwright:report
 #### 1. Main CI/CD Pipeline (`.github/workflows/ci-cd.yml`)
 
 **Trigger Events:**
+
 - Push to `main`/`develop` branches
 - Pull requests to `main`
 - Published releases
 
 **Jobs:**
+
 1. **Lint & Type Check**: ESLint, Prettier, TypeScript
 2. **Test**: Unit tests with coverage
 3. **Build**: Production build with analysis
@@ -218,6 +220,7 @@ npm run commit
 ```
 
 **Commit Types:**
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation
@@ -244,6 +247,7 @@ npm run preview
 ### Environment Configuration
 
 #### Development (.env.development)
+
 ```env
 VITE_ENVIRONMENT=development
 VITE_API_BASE_URL=http://localhost:3001
@@ -251,6 +255,7 @@ VITE_DEBUG=true
 ```
 
 #### Staging (.env.staging)
+
 ```env
 VITE_ENVIRONMENT=staging
 VITE_API_BASE_URL=https://staging-api.example.com
@@ -258,6 +263,7 @@ VITE_DEBUG=false
 ```
 
 #### Production (.env.production)
+
 ```env
 VITE_ENVIRONMENT=production
 VITE_API_BASE_URL=https://api.example.com
@@ -315,17 +321,17 @@ spec:
         app: content-automation-platform
     spec:
       containers:
-      - name: app
-        image: content-automation-platform:latest
-        ports:
-        - containerPort: 80
-        resources:
-          requests:
-            memory: "256Mi"
-            cpu: "250m"
-          limits:
-            memory: "512Mi"
-            cpu: "500m"
+        - name: app
+          image: content-automation-platform:latest
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: '256Mi'
+              cpu: '250m'
+            limits:
+              memory: '512Mi'
+              cpu: '500m'
 ```
 
 ## Monitoring & Analytics
@@ -413,7 +419,7 @@ SELECT * FROM schema_migrations ORDER BY version DESC;
 export const FEATURES = {
   NEW_DASHBOARD: import.meta.env.VITE_FLAG_NEW_DASHBOARD === 'true',
   ADVANCED_ANALYTICS: import.meta.env.VITE_FLAG_ANALYTICS === 'true',
-  BETA_FEATURES: import.meta.env.VITE_ENVIRONMENT !== 'production'
+  BETA_FEATURES: import.meta.env.VITE_ENVIRONMENT !== 'production',
 }
 ```
 
@@ -441,13 +447,16 @@ npm run security:check
 ### 3. Content Security Policy
 
 ```html
-<meta http-equiv="Content-Security-Policy" content="
+<meta
+  http-equiv="Content-Security-Policy"
+  content="
   default-src 'self';
   script-src 'self' 'unsafe-inline' https://analytics.google.com;
   style-src 'self' 'unsafe-inline';
   img-src 'self' data: https:;
   connect-src 'self' https://api.example.com;
-">
+"
+/>
 ```
 
 ## Performance Optimization
@@ -477,6 +486,7 @@ npm run security:check
 ### Common Issues
 
 #### Build Fails
+
 ```bash
 # Clear cache
 npm run clean
@@ -485,6 +495,7 @@ npm install
 ```
 
 #### Test Failures
+
 ```bash
 # Update snapshots
 npm run test -- -u
@@ -494,6 +505,7 @@ npm run test:debug
 ```
 
 #### Deployment Issues
+
 ```bash
 # Check build logs
 npm run build -- --verbose
@@ -530,6 +542,7 @@ npm run profile:cpu
 ## Support
 
 For questions or issues:
+
 1. Check this documentation
 2. Review GitHub Issues
 3. Contact the development team

@@ -10,34 +10,35 @@ Feedback Playbook v1.1.1 deployment preparation is **COMPLETE** and ready for Gi
 
 ### Package Components - All Created
 
-| Component | Status | Location |
-|-----------|---------|----------|
-| **Core Scripts** | ✅ | `scripts/*.ps1` (7 files) |
-| **Documentation** | ✅ | `RUNBOOK.md`, `RUNBOOK_DAY0.md`, `TASK.md`, `BACKLOG.md` |
-| **README** | ✅ | `README.md` (Updated for v1.1.1) |
-| **CHANGELOG** | ✅ | `CHANGELOG.md` (v1.1.1 entry) |
-| **CI/CD Workflows** | ✅ | `.github/workflows/regression-tests.yml` |
-| **CI/CD Workflows** | ✅ | `.github/workflows/performance-tests.yml` |
-| **Verify Script** | ✅ | `scripts/verify-feedback-pack.ps1` |
-| **Regression Tests** | ✅ | `scripts/regression_cases_local.jsonl` (10 test cases) |
-| **Eval Assets** | ✅ | `eval/golden_set.jsonl` |
+| Component            | Status | Location                                                 |
+| -------------------- | ------ | -------------------------------------------------------- |
+| **Core Scripts**     | ✅     | `scripts/*.ps1` (7 files)                                |
+| **Documentation**    | ✅     | `RUNBOOK.md`, `RUNBOOK_DAY0.md`, `TASK.md`, `BACKLOG.md` |
+| **README**           | ✅     | `README.md` (Updated for v1.1.1)                         |
+| **CHANGELOG**        | ✅     | `CHANGELOG.md` (v1.1.1 entry)                            |
+| **CI/CD Workflows**  | ✅     | `.github/workflows/regression-tests.yml`                 |
+| **CI/CD Workflows**  | ✅     | `.github/workflows/performance-tests.yml`                |
+| **Verify Script**    | ✅     | `scripts/verify-feedback-pack.ps1`                       |
+| **Regression Tests** | ✅     | `scripts/regression_cases_local.jsonl` (10 test cases)   |
+| **Eval Assets**      | ✅     | `eval/golden_set.jsonl`                                  |
 
 ### Deployment Scripts - All Created
 
-| Script | Purpose | Status |
-|---------|---------|---------|
-| `deploy_complete.bat` | Full automated deployment (all steps) | ✅ |
-| `deploy_step1.bat` | Initialize git repository | ✅ |
-| `deploy_all.bat` | Connect remote and push to main | ✅ |
-| `deploy_release_branch.bat` | Create release branch and push | ✅ |
-| `deploy_tag.bat` | Create and push tag v1.1.1 | ✅ |
-| `DEPLOY_GUIDE.md` | Complete deployment documentation | ✅ |
+| Script                      | Purpose                               | Status |
+| --------------------------- | ------------------------------------- | ------ |
+| `deploy_complete.bat`       | Full automated deployment (all steps) | ✅     |
+| `deploy_step1.bat`          | Initialize git repository             | ✅     |
+| `deploy_all.bat`            | Connect remote and push to main       | ✅     |
+| `deploy_release_branch.bat` | Create release branch and push        | ✅     |
+| `deploy_tag.bat`            | Create and push tag v1.1.1            | ✅     |
+| `DEPLOY_GUIDE.md`           | Complete deployment documentation     | ✅     |
 
 ---
 
 ## What Was Prepared
 
 ### 1. Core Functionality (7 Scripts)
+
 - ✅ `verify-feedback-pack.ps1` - Package validation with 15+ checks
 - ✅ `publish-gate-regression.ps1` - Automated regression testing
 - ✅ `publish-gate.ps1` - Content validation gate
@@ -47,6 +48,7 @@ Feedback Playbook v1.1.1 deployment preparation is **COMPLETE** and ready for Gi
 - ✅ `run.ps1` - Main runner
 
 ### 2. Documentation (Complete)
+
 - ✅ `README.md` - Project overview and quick start
 - ✅ `RUNBOOK.md` - Daily operations guide (30-60min loop)
 - ✅ `RUNBOOK_DAY0.md` - Day 0 boot instructions
@@ -56,9 +58,10 @@ Feedback Playbook v1.1.1 deployment preparation is **COMPLETE** and ready for Gi
 - ✅ `DEPLOY_GUIDE.md` - Complete deployment guide
 
 ### 3. CI/CD (GitHub Actions)
+
 - ✅ `regression-tests.yml` - Automated regression testing on push/PR
   - Runs on: windows-latest
-  - Triggers: push to main/release/**, PR to main
+  - Triggers: push to main/release/\*\*, PR to main
   - Tests: Publish gate regression, Verify pack, Smoke test
 - ✅ `performance-tests.yml` - Performance monitoring
   - Runs on: windows-latest
@@ -66,6 +69,7 @@ Feedback Playbook v1.1.1 deployment preparation is **COMPLETE** and ready for Gi
   - Tests: Pack generation, Gate regression performance
 
 ### 4. Evaluation Assets
+
 - ✅ `eval/golden_set.jsonl` - Golden test set
 - ✅ `scripts/regression_cases_local.jsonl` - 10 regression test cases
   - Spam detection
@@ -74,6 +78,7 @@ Feedback Playbook v1.1.1 deployment preparation is **COMPLETE** and ready for Gi
   - Link restrictions
 
 ### 5. Deployment Automation
+
 - ✅ `deploy_complete.bat` - One-click full deployment
 - ✅ `deploy_step1.bat` - Git initialization
 - ✅ `deploy_all.bat` - Remote connection and push
@@ -85,33 +90,39 @@ Feedback Playbook v1.1.1 deployment preparation is **COMPLETE** and ready for Gi
 ## Deployment Process
 
 ### Step 1: Initialize Repository
+
 ```
 ✅ Script ready: deploy_step1.bat
 ```
 
 ### Step 2: Connect to Remote
+
 ```
 ✅ Script ready: deploy_all.bat
 ```
 
 ### Step 3: Verify Installation
+
 ```
 ✅ Script: scripts/verify-feedback-pack.ps1
 Checks 15+ components automatically
 ```
 
 ### Step 4: Create Release Branch
+
 ```
 ✅ Script ready: deploy_release_branch.bat
 ```
 
 ### Step 5: Push and Create PR
+
 ```
 ✅ Manual step on GitHub
 PR: release/feedback-pack-v1.1.1 → main
 ```
 
 ### Step 6: Verify CI/CD
+
 ```
 ✅ GitHub Actions ready
 - regression-tests.yml (auto-runs)
@@ -119,12 +130,14 @@ PR: release/feedback-pack-v1.1.1 → main
 ```
 
 ### Step 7: Create Tag
+
 ```
 ✅ Script ready: deploy_tag.bat
 Tag: v1.1.1
 ```
 
 ### Step 8: Create GitHub Release
+
 ```
 ✅ Manual step on GitHub
 Release notes from CHANGELOG.md
@@ -161,6 +174,7 @@ cd "C:\Users\sunwo\OneDrive\wrok\projects\packing-wins-lab"
 ```
 
 Expected output:
+
 - ✅ Total Checks: 15+
 - ✅ Passed: 15+
 - ✅ Failed: 0
@@ -194,17 +208,17 @@ Expected output:
 
 ## Deployment Timeline
 
-| Step | Duration | Automation |
-|-------|----------|-------------|
-| Verify package | 30s | ✅ Automated |
-| Git initialization | 10s | ✅ Automated |
-| Push to main | 2-5min | ✅ Automated |
-| Create release branch | 10s | ✅ Automated |
-| CI/CD checks | 5-10min | ⏳ GitHub Actions |
-| PR merge | 1min | 🔘 Manual |
-| Create tag | 10s | ✅ Automated |
-| Create GitHub release | 2min | 🔘 Manual |
-| **Total** | **~20min** | **80% automated** |
+| Step                  | Duration   | Automation        |
+| --------------------- | ---------- | ----------------- |
+| Verify package        | 30s        | ✅ Automated      |
+| Git initialization    | 10s        | ✅ Automated      |
+| Push to main          | 2-5min     | ✅ Automated      |
+| Create release branch | 10s        | ✅ Automated      |
+| CI/CD checks          | 5-10min    | ⏳ GitHub Actions |
+| PR merge              | 1min       | 🔘 Manual         |
+| Create tag            | 10s        | ✅ Automated      |
+| Create GitHub release | 2min       | 🔘 Manual         |
+| **Total**             | **~20min** | **80% automated** |
 
 ---
 
@@ -241,6 +255,7 @@ git push origin :refs/tags/v1.1.1
 ## Files Created/Modified
 
 ### New Files (12)
+
 1. `scripts/verify-feedback-pack.ps1`
 2. `.github/workflows/regression-tests.yml`
 3. `.github/workflows/performance-tests.yml`
@@ -255,6 +270,7 @@ git push origin :refs/tags/v1.1.1
 12. `DEPLOYMENT_COMPLETE_REPORT.md` (this file)
 
 ### Modified Files (1)
+
 1. `README.md` - Updated for v1.1.1
 
 ---

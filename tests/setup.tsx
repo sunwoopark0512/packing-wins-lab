@@ -4,18 +4,18 @@ import { beforeAll, afterEach, vi } from 'vitest'
 
 // Mock IntersectionObserver
 global.IntersectionObserver = class IntersectionObserver {
-  constructor() { }
-  disconnect() { }
-  observe() { }
-  unobserve() { }
+  constructor() {}
+  disconnect() {}
+  observe() {}
+  unobserve() {}
 }
 
 // Mock ResizeObserver
 global.ResizeObserver = class ResizeObserver {
-  constructor() { }
-  disconnect() { }
-  observe() { }
-  unobserve() { }
+  constructor() {}
+  disconnect() {}
+  observe() {}
+  unobserve() {}
 }
 
 // Mock matchMedia
@@ -25,12 +25,12 @@ Object.defineProperty(window, 'matchMedia', {
     matches: false,
     media: query,
     onchange: null,
-    addListener: () => { },
-    removeListener: () => { },
-    addEventListener: () => { },
-    removeEventListener: () => { },
-    dispatchEvent: () => { }
-  })
+    addListener: () => {},
+    removeListener: () => {},
+    addEventListener: () => {},
+    removeEventListener: () => {},
+    dispatchEvent: () => {},
+  }),
 })
 
 // Mock react-router-dom
@@ -41,9 +41,12 @@ vi.mock('react-router-dom', async (importOriginal) => {
   const actual = await importOriginal<typeof import('react-router-dom')>()
   return {
     ...actual,
-    BrowserRouter: ({ children }: { children: React.ReactNode }) => React.createElement('div', null, children),
-    Routes: ({ children }: { children: React.ReactNode }) => React.createElement('div', null, children),
-    Route: ({ children }: { children: React.ReactNode }) => React.createElement('div', null, children),
+    BrowserRouter: ({ children }: { children: React.ReactNode }) =>
+      React.createElement('div', null, children),
+    Routes: ({ children }: { children: React.ReactNode }) =>
+      React.createElement('div', null, children),
+    Route: ({ children }: { children: React.ReactNode }) =>
+      React.createElement('div', null, children),
     useLocation: () => mockLocation,
     useNavigate: () => mockNavigate,
   }

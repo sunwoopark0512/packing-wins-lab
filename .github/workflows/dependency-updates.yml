@@ -2,7 +2,7 @@ name: Dependency Updates
 
 on:
   schedule:
-    - cron: '0 4 * * 1'  # Run every Monday at 4 AM UTC
+    - cron: '0 4 * * 1' # Run every Monday at 4 AM UTC
   workflow_dispatch:
 
 jobs:
@@ -38,19 +38,19 @@ jobs:
           title: 'chore: update dependencies'
           body: |
             ## Dependency Updates
-            
+
             This PR updates all dependencies to their latest versions.
-            
+
             ### Changes
             - Updated all npm packages to latest versions
             - Tests pass after update
             - Ready for review
-            
+
             ### Checklist
             - [ ] All tests pass
             - [ ] Build succeeds
             - [ ] No breaking changes detected
-          
+
           branch: deps/update-dependencies
           delete-branch: true
           labels: |

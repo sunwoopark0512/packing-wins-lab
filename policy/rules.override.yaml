@@ -1,4 +1,4 @@
 link_limit: 1
 platform_rules:
-  tiktok: "commercial_content_toggle: true"
-  reddit: "no_auto_post: true"
+  tiktok: 'commercial_content_toggle: true'
+  reddit: 'no_auto_post: true'

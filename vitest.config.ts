@@ -8,7 +8,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
-    }
+    },
   },
   test: {
     globals: true,
@@ -17,7 +17,15 @@ export default defineConfig({
     exclude: ['**/node_modules/**', '**/dist/**', '**/e2e/**', 'tests/e2e/**'],
     coverage: {
       provider: 'v8',
-      exclude: ['**/node_modules/**', '**/dist/**', '**/e2e/**', 'tests/e2e/**', 'vite.config.ts', 'vitest.config.ts', '.eslintrc.cjs']
-    }
-  }
+      exclude: [
+        '**/node_modules/**',
+        '**/dist/**',
+        '**/e2e/**',
+        'tests/e2e/**',
+        'vite.config.ts',
+        'vitest.config.ts',
+        '.eslintrc.cjs',
+      ],
+    },
+  },
 })

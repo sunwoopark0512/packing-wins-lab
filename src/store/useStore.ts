@@ -90,7 +90,7 @@ const useStore = create<AppState>((set) => ({
   updateContent: (id, updates) => {
     set((state) => ({
       contents: state.contents.map((content) =>
-        content.id === id ? { ...content, ...updates, updatedAt: new Date() } : content,
+        content.id === id ? { ...content, ...updates, updatedAt: new Date() } : content
       ),
     }))
   },
@@ -117,7 +117,10 @@ const useStore = create<AppState>((set) => ({
   addNotification: (notification) => {
     const id = Date.now().toString()
     set((state) => ({
-      notifications: [{ ...notification, id, timestamp: new Date(), read: false }, ...state.notifications],
+      notifications: [
+        { ...notification, id, timestamp: new Date(), read: false },
+        ...state.notifications,
+      ],
     }))
   },
 

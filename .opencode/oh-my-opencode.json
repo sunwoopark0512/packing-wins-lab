@@ -1,14 +1,14 @@
 {
-    "google_auth": false,
-    "agents": {
-        "document-writer": {
-            "model": "PLACEHOLDER_GOOGLE_FAST_MODEL_ID"
-        },
-        "multimodal-looker": {
-            "model": "PLACEHOLDER_GOOGLE_FAST_MODEL_ID"
-        },
-        "frontend-ui-ux-engineer": {
-            "model": "PLACEHOLDER_OPENAI_STRONG_MODEL_ID"
-        }
+  "google_auth": false,
+  "agents": {
+    "document-writer": {
+      "model": "PLACEHOLDER_GOOGLE_FAST_MODEL_ID"
+    },
+    "multimodal-looker": {
+      "model": "PLACEHOLDER_GOOGLE_FAST_MODEL_ID"
+    },
+    "frontend-ui-ux-engineer": {
+      "model": "PLACEHOLDER_OPENAI_STRONG_MODEL_ID"
     }
+  }
 }

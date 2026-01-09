@@ -21,16 +21,16 @@ export default defineConfig({
           {
             src: 'pwa-192x192.png',
             sizes: '192x192',
-            type: 'image/png'
+            type: 'image/png',
           },
           {
             src: 'pwa-512x512.png',
             sizes: '512x512',
-            type: 'image/png'
-          }
-        ]
-      }
-    })
+            type: 'image/png',
+          },
+        ],
+      },
+    }),
   ],
   resolve: {
     alias: {
@@ -41,20 +41,20 @@ export default defineConfig({
       '@utils': resolve(__dirname, 'src/utils'),
       '@types': resolve(__dirname, 'src/types'),
       '@assets': resolve(__dirname, 'src/assets'),
-      '@store': resolve(__dirname, 'src/store')
-    }
+      '@store': resolve(__dirname, 'src/store'),
+    },
   },
   server: {
     port: 3000,
     host: true,
     open: true,
     hmr: {
-      overlay: true
-    }
+      overlay: true,
+    },
   },
   preview: {
     port: 4173,
-    host: true
+    host: true,
   },
   build: {
     outDir: 'dist',
@@ -63,31 +63,31 @@ export default defineConfig({
     terserOptions: {
       compress: {
         drop_console: true,
-        drop_debugger: true
-      }
+        drop_debugger: true,
+      },
     },
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
           router: ['react-router-dom'],
-          state: ['zustand']
-        }
-      }
+          state: ['zustand'],
+        },
+      },
     },
-    chunkSizeWarningLimit: 1000
+    chunkSizeWarningLimit: 1000,
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom', 'zustand']
+    include: ['react', 'react-dom', 'react-router-dom', 'zustand'],
   },
   define: {
     __APP_VERSION__: JSON.stringify(process.env.npm_package_version),
-    __BUILD_TIME__: JSON.stringify(new Date().toISOString())
+    __BUILD_TIME__: JSON.stringify(new Date().toISOString()),
   },
   test: {
     globals: true,
     environment: 'jsdom',
     setupFiles: './tests/setup.tsx',
     exclude: ['**/node_modules/**', '**/dist/**', '**/e2e/**', 'tests/e2e/**'],
-  }
+  },
 })

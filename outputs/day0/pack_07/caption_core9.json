@@ -6,17 +6,26 @@
       "text_en": "#ad #travelhacks",
       "placement": "start"
     },
-    "links": [ { "url": "https://YOUR-LINK-HUB.example", "placement": "bio/comment" } ]
+    "links": [{ "url": "https://YOUR-LINK-HUB.example", "placement": "bio/comment" }]
   },
   "platforms": {
-    "tiktok": { "post_text": "Cracked powder tragedy? Hard shell case protects your glow. #packinghack", "cta": "Link in bio" },
-    "youtube_shorts": { "post_text": "Cracked powder tragedy? No more Soft bags crush makeup.!", "cta": "Link in pinned comment" },
+    "tiktok": {
+      "post_text": "Cracked powder tragedy? Hard shell case protects your glow. #packinghack",
+      "cta": "Link in bio"
+    },
+    "youtube_shorts": {
+      "post_text": "Cracked powder tragedy? No more Soft bags crush makeup.!",
+      "cta": "Link in pinned comment"
+    },
     "instagram_reels": { "post_text": "Soft bags crush makeup. Solved. ✈️", "cta": "Link in bio" },
     "facebook_reels": { "post_text": "Travel smart: Makeup Case", "cta": "Link in comments" },
     "threads": { "post_text": "Cracked powder tragedy?", "cta": "Link in bio" },
     "x": { "post_text": "Before/After: Makeup Case. #travel", "cta": "Link below" },
     "pinterest": { "post_text": "Save this packing hack: Makeup Case", "cta": "Visit link" },
-    "linkedin": { "post_text": "Business travel efficiency: Makeup Case", "cta": "Link in comments" },
+    "linkedin": {
+      "post_text": "Business travel efficiency: Makeup Case",
+      "cta": "Link in comments"
+    },
     "blog": { "post_text": "Full review: Why I use this Makeup Case.", "cta": "Read more" }
   }
 }

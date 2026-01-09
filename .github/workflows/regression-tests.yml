@@ -2,62 +2,60 @@ name: Regression Tests
 
 on:
   push:
-    branches: [ main, release/** ]
+    branches: [main, release/**]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   regression-tests:
     runs-on: windows-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
+      - name: Run Publish Gate Regression
+        shell: pwsh
+        run: |
+          Write-Host "Starting Publish Gate Regression..."
+          try {
+            .\scripts\publish-gate-regression.ps1 -Verbose
+          } catch {
+            Write-Host "Error running publish-gate-regression: $_"
+            exit 1
+          }
 
+      - name: Run Verify Feedback Pack
+        shell: pwsh
+        run: |
+          Write-Host "Starting Verify Feedback Pack..."
+          try {
+            .\scripts\verify-feedback-pack.ps1 -Verbose
+          } catch {
+            Write-Host "Error running verify-feedback-pack: $_"
+            exit 1
+          }
 
-    - name: Run Publish Gate Regression
-      shell: pwsh
-      run: |
-        Write-Host "Starting Publish Gate Regression..."
-        try {
-          .\scripts\publish-gate-regression.ps1 -Verbose
-        } catch {
-          Write-Host "Error running publish-gate-regression: $_"
-          exit 1
-        }
+      - name: Run Smoke Test
+        shell: pwsh
+        run: |
+          if (Test-Path ".\scripts\smoke-test.ps1") {
+              try {
+                  .\scripts\smoke-test.ps1
+              } catch {
+                  Write-Host "Error running smoke-test: $_"
+                  exit 1
+              }
+          } else {
+              Write-Host "Smoke test not found, skipping..."
+          }
 
-    - name: Run Verify Feedback Pack
-      shell: pwsh
-      run: |
-        Write-Host "Starting Verify Feedback Pack..."
-        try {
-          .\scripts\verify-feedback-pack.ps1 -Verbose
-        } catch {
-          Write-Host "Error running verify-feedback-pack: $_"
-          exit 1
-        }
-
-    - name: Run Smoke Test
-      shell: pwsh
-      run: |
-        if (Test-Path ".\scripts\smoke-test.ps1") {
-            try {
-                .\scripts\smoke-test.ps1
-            } catch {
-                Write-Host "Error running smoke-test: $_"
-                exit 1
-            }
-        } else {
-            Write-Host "Smoke test not found, skipping..."
-        }
-
-    - name: Generate Report
-      if: always()
-      shell: pwsh
-      run: |
-        $date = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-        $status = if ($LASTEXITCODE -eq 0) { "PASS" } else { "FAIL" }
-        Write-Host "Regression Test Report"
-        Write-Host "Date: $date"
-        Write-Host "Status: $status"
+      - name: Generate Report
+        if: always()
+        shell: pwsh
+        run: |
+          $date = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+          $status = if ($LASTEXITCODE -eq 0) { "PASS" } else { "FAIL" }
+          Write-Host "Regression Test Report"
+          Write-Host "Date: $date"
+          Write-Host "Status: $status"

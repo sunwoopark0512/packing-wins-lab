@@ -65,6 +65,7 @@
 ### Known Limitations: ⚠ 4 Failing Tests
 
 The 4 failing tests are due to:
+
 1. **$MyInvocation context** - When running from standalone test file, $MyInvocation behavior differs
 2. **Function scoping** - Test helper functions not visible in all test contexts
 
@@ -72,14 +73,14 @@ These are **test framework issues**, not **product bugs**. The actual verify-fee
 
 ### Test Coverage
 
-| Category | Coverage | Status |
-|-----------|-----------|--------|
-| Test-Check helper function | 100% | ✅ |
-| File existence checks | 100% | ✅ |
-| Counter tracking | 100% | ✅ |
-| Error handling | 100% | ✅ |
-| Path resolution (standalone) | 0% | ❌ |
-| Null result handling | 0% | ❌ |
+| Category                     | Coverage | Status |
+| ---------------------------- | -------- | ------ |
+| Test-Check helper function   | 100%     | ✅     |
+| File existence checks        | 100%     | ✅     |
+| Counter tracking             | 100%     | ✅     |
+| Error handling               | 100%     | ✅     |
+| Path resolution (standalone) | 0%       | ❌     |
+| Null result handling         | 0%       | ❌     |
 
 **Overall Core Coverage:** ~80% (excluding test framework issues)
 

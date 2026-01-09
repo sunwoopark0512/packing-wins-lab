@@ -24,6 +24,7 @@ In the interest of fostering an open and welcoming environment, we as contributo
 ### Our Standards
 
 Examples of behavior that contributes to creating a positive environment:
+
 - Using welcoming and inclusive language
 - Being respectful of differing viewpoints and experiences
 - Gracefully accepting constructive criticism
@@ -39,6 +40,7 @@ Examples of behavior that contributes to creating a positive environment:
 Before creating bug reports, please check the existing issues as you might find that the bug is already reported.
 
 When creating bug reports:
+
 - Use a clear and descriptive title
 - Provide as much detail as possible
 - Include steps to reproduce
@@ -48,6 +50,7 @@ When creating bug reports:
 ### Suggesting Enhancements
 
 Enhancement suggestions are tracked as GitHub issues. When creating enhancement suggestions:
+
 - Use a clear and descriptive title
 - Provide a detailed use case
 - Explain why this enhancement would be useful
@@ -60,6 +63,7 @@ We welcome code contributions! See the [Development Workflow](#development-workf
 ### Improving Documentation
 
 Documentation improvements are always welcome! You can:
+
 - Fix typos
 - Clarify confusing sections
 - Add examples
@@ -139,6 +143,7 @@ git commit -m "feat: add your feature description"
 ```
 
 Follow conventional commit format:
+
 - `feat:` New feature
 - `fix:` Bug fix
 - `docs:` Documentation changes
@@ -292,6 +297,7 @@ function Get-ProjectType {
 ### Versioning
 
 We follow Semantic Versioning (MAJOR.MINOR.PATCH):
+
 - **MAJOR**: Incompatible API changes
 - **MINOR**: Backwards-compatible functionality additions
 - **PATCH**: Backwards-compatible bug fixes

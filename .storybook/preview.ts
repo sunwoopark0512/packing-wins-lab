@@ -6,22 +6,22 @@ const preview: Preview = {
     controls: {
       matchers: {
         color: /(background|color)$/i,
-        date: /Date$/
-      }
+        date: /Date$/,
+      },
     },
     backgrounds: {
       default: 'light',
       values: [
         {
           name: 'light',
-          value: '#ffffff'
+          value: '#ffffff',
         },
         {
           name: 'dark',
-          value: '#333333'
-        }
-      ]
-    }
+          value: '#333333',
+        },
+      ],
+    },
   },
   globalTypes: {
     locale: {
@@ -31,8 +31,8 @@ const preview: Preview = {
         title: 'Locale',
         icon: 'globe',
         items: ['en', 'es', 'fr', 'de', 'ja'],
-        dynamicTitle: true
-      }
-    }
-  }
+        dynamicTitle: true,
+      },
+    },
+  },
 }

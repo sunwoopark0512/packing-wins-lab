@@ -6,11 +6,11 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "80:80"
+      - '80:80'
     environment:
       - NODE_ENV=production
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      test: ['CMD', 'curl', '-f', 'http://localhost/health']
       interval: 30s
       timeout: 10s
       retries: 3
@@ -20,7 +20,7 @@ services:
   nginx:
     image: nginx:alpine
     ports:
-      - "443:443"
+      - '443:443'
     volumes:
       - ./nginx-ssl.conf:/etc/nginx/nginx.conf:ro
       - ./ssl:/etc/nginx/ssl:ro
@@ -31,7 +31,7 @@ services:
   monitoring:
     image: grafana/grafana:latest
     ports:
-      - "3001:3000"
+      - '3001:3000'
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=admin
     volumes:
@@ -41,7 +41,7 @@ services:
   prometheus:
     image: prom/prometheus:latest
     ports:
-      - "9090:9090"
+      - '9090:9090'
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
       - prometheus-storage:/prometheus

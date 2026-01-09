@@ -1,12 +1,13 @@
 # Slash Commands Reference
 
 ## Overview
+
 This document provides a comprehensive guide to available slash commands in the OpenCode environment.
 
 ## Available Commands
 
-| Command | Description | Arguments/Options | Example |
-|---------|-------------|------------------|---------|
+| Command       | Description                                                                                                                                             | Arguments/Options                  | Example                                            |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- | -------------------------------------------------- |
 | `/playwright` | Browser automation via Playwright MCP - verification, browsing, information gathering, web scraping, testing, screenshots, and all browser interactions | Varies by Playwright MCP operation | `/playwright` followed by browser automation tasks |
 
 ---
@@ -14,7 +15,9 @@ This document provides a comprehensive guide to available slash commands in the 
 ## `/help` 대체 커맨드 (Alternatives)
 
 ### Why `/help` Doesn't Exist
+
 **Status**: A) `help` 커맨드 자체가 없음
+
 - The system currently implements only one slash command: `/playwright`
 - No general help command is configured in the skill system
 - Alternative mechanisms must be used to discover commands
@@ -22,27 +25,36 @@ This document provides a comprehensive guide to available slash commands in the 
 ### Replacement Commands
 
 #### 1. `/` (Empty or Invalid Command)
+
 **Purpose**: Triggers error message that lists available commands
+
 ```bash
 /
 ```
+
 **Output**: Shows available commands and suggestions
 **Verified**: ✅ Working - returns command list when invalid command entered
 
 #### 2. `/playwright` (Direct Command Usage)
+
 **Purpose**: Use the Playwright skill directly via slash command
+
 ```bash
 /playwright
 ```
+
 **Output**: Loads the Playwright MCP skill for browser automation tasks
 **Verified**: ✅ Working - invokes Playwright skill
 
 #### 3. `skill` Tool (Programmatic Alternative)
+
 **Purpose**: Invoke skills programmatically instead of slash commands
+
 ```javascript
 // Use the skill tool with explicit skill name
-await skill({ name: "playwright" })
+await skill({ name: 'playwright' })
 ```
+
 **Output**: Same as `/playwright` but through tool invocation
 **Verified**: ✅ Working - identical functionality to slash command
 
@@ -52,9 +64,9 @@ await skill({ name: "playwright" })
 
 Currently, only **1 slash command** is available:
 
-| Rank | Command | Use Case | Frequency |
-|------|---------|----------|-----------|
-| 1 | `/playwright` | Browser automation, web scraping, testing, screenshots | High |
+| Rank | Command       | Use Case                                               | Frequency |
+| ---- | ------------- | ------------------------------------------------------ | --------- |
+| 1    | `/playwright` | Browser automation, web scraping, testing, screenshots | High      |
 
 **Note**: As more commands are added to the skill system, this table will be updated.
 
@@ -97,6 +109,7 @@ Currently, only **1 slash command** is available:
 ## Context-Specific Commands
 
 ### OpenCode Environment
+
 - Currently available commands:
   - `/playwright` - Built-in skill for browser automation
 - Command discovery:
@@ -104,7 +117,9 @@ Currently, only **1 slash command** is available:
   - Check error messages for suggestions when entering invalid commands
 
 ### Other UIs (Future Expansion)
+
 If additional UI systems are added (e.g., VS Code extension, web interface):
+
 - Commands may differ between environments
 - Always check the specific UI's documentation
 - This document will be updated with environment-specific sections
@@ -114,6 +129,7 @@ If additional UI systems are added (e.g., VS Code extension, web interface):
 ## Command Usage Examples
 
 ### Example 1: Web Scraping with Playwright
+
 ```bash
 /playwright
 # Then use Playwright MCP operations:
@@ -124,6 +140,7 @@ If additional UI systems are added (e.g., VS Code extension, web interface):
 ```
 
 ### Example 2: Browser Testing
+
 ```bash
 /playwright
 # Then:
@@ -134,9 +151,10 @@ If additional UI systems are added (e.g., VS Code extension, web interface):
 ```
 
 ### Example 3: Programmatic Skill Invocation
+
 ```javascript
 // Instead of slash command, use skill tool
-await skill({ name: "playwright" })
+await skill({ name: 'playwright' })
 ```
 
 ---
@@ -144,6 +162,7 @@ await skill({ name: "playwright" })
 ## Quick Reference
 
 ### Command Discovery
+
 ```bash
 # Method 1: Enter invalid command to see list
 /help
@@ -156,6 +175,7 @@ await slashcommand({ command: "/" })
 ```
 
 ### Help Resources
+
 1. **This Document**: `SLASH_COMMANDS.md`
 2. **Runbook**: `RUNBOOK_DAY0.md` (see "Slash Commands" section)
 3. **Error Messages**: Always read suggestions when commands fail
@@ -164,14 +184,15 @@ await slashcommand({ command: "/" })
 
 ## Version History
 
-| Version | Date | Changes |
-|---------|------|---------|
-| v1.0 | 2026-01-08 | Initial documentation of available slash commands |
-| v1.1 | TBD | Add more commands as they become available |
+| Version | Date       | Changes                                           |
+| ------- | ---------- | ------------------------------------------------- |
+| v1.0    | 2026-01-08 | Initial documentation of available slash commands |
+| v1.1    | TBD        | Add more commands as they become available        |
 
 ---
 
 ## Last Updated
+
 **Date**: 2026-01-08
 **Verified By**: Sisyphus (OpenCode Agent)
 **Available Commands**: 1

@@ -16,6 +16,7 @@ This guide will walk you through deploying Feedback Playbook v1.1.1 to GitHub.
 Double-click `deploy_step1.bat` to initialize the git repository.
 
 **Or run manually:**
+
 ```powershell
 cd "C:\Users\sunwo\OneDrive\wrok\projects\packing-wins-lab"
 git init
@@ -28,6 +29,7 @@ git commit -m "Initial commit: packing-wins-lab"
 Double-click `deploy_all.bat` and enter your GitHub repository URL when prompted.
 
 **Or run manually:**
+
 ```powershell
 # First, create an empty repository on GitHub
 # Then connect:
@@ -49,6 +51,7 @@ If verification fails, fix the issues before proceeding.
 Double-click `deploy_release_branch.bat`.
 
 **Or run manually:**
+
 ```powershell
 git switch -c release/feedback-pack-v1.1.1
 git add -A
@@ -70,6 +73,7 @@ git push -u origin release/feedback-pack-v1.1.1
 After merging the PR, double-click `deploy_tag.bat`.
 
 **Or run manually:**
+
 ```powershell
 git switch main
 git pull
@@ -111,6 +115,7 @@ Before completing deployment, verify:
 **Problem:** `git push` fails with authentication error
 
 **Solution:**
+
 1. Configure Git credentials:
    ```powershell
    git config --global user.name "Your Name"
@@ -124,6 +129,7 @@ Before completing deployment, verify:
 **Problem:** GitHub Actions checks fail
 
 **Solution:**
+
 1. Check the logs on GitHub Actions page
 2. Verify scripts work locally:
    ```powershell
@@ -138,6 +144,7 @@ Before completing deployment, verify:
 **Problem:** Tag v1.1.1 already exists
 
 **Solution:** Delete existing tag:
+
 ```powershell
 git tag -d v1.1.1
 git push origin :refs/tags/v1.1.1
@@ -177,12 +184,12 @@ After completing all steps, your Feedback Playbook v1.1.1 will be:
 
 ## Deployment Scripts
 
-| Script | Purpose |
-|---------|---------|
-| `deploy_step1.bat` | Initialize git repository |
-| `deploy_all.bat` | Connect to remote and push to main |
-| `deploy_release_branch.bat` | Create release branch and push |
-| `deploy_tag.bat` | Create and push tag |
+| Script                      | Purpose                            |
+| --------------------------- | ---------------------------------- |
+| `deploy_step1.bat`          | Initialize git repository          |
+| `deploy_all.bat`            | Connect to remote and push to main |
+| `deploy_release_branch.bat` | Create release branch and push     |
+| `deploy_tag.bat`            | Create and push tag                |
 
 Run these scripts in order for automated deployment.
 

@@ -22,9 +22,11 @@ Add any other context or screenshots about the feature request here.
 Describe specific use cases for this feature.
 
 **Priority**
+
 - [ ] High - Critical for daily operations
 - [ ] Medium - Important but not blocking
 - [ ] Low - Nice to have
 
 **Version**
+
 - Feedback Playbook Version: [e.g. v1.1.1]

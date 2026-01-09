@@ -1,7 +1,9 @@
 ﻿# YT Longform Candidate (Pack 02)
+
 **Eligibility**: Only if Shorts version hits Top 20% Retention.
 
 ## Outline: Ultimate Guide to Toiletry Bag
+
 1. Intro: The Math of Packing (Volume vs Weight).
 2. Demo: Standard Packing vs Toiletry Bag.
 3. Stress Test: Can it handle a 2-week trip load?

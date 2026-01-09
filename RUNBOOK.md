@@ -1,4 +1,5 @@
 # Runbook: Daily Operations
+
 **Project**: `packing-wins-lab`
 **Focus**: 콘텐츠 자동화 + 제휴 링크 + 11채널 배포
 
@@ -7,12 +8,14 @@
 ## 📅 Daily Loop (매일 30~60분)
 
 ### A. TiCo (3분)
+
 ```powershell
 # 오늘 출력 1개 즉시 생성
 opencode run -m <GOOGLE_MODEL_ID> -f .\PROMPTS\AG_DAILY_TICO.txt --title "Daily TiCo" "Today's task: ___"
 ```
 
 ### B. 실행 (20~40분)
+
 ```powershell
 # 1. Publish Gate Regression (회귀 테스트)
 .\scripts\publish-gate-regression.ps1
@@ -25,6 +28,7 @@ Get-Content .\outputs\day0\pack_01\caption_core9.json | .\scripts\publish-gate.p
 ```
 
 ### C. 검증 (5~10분)
+
 ```powershell
 # 1. Publish Gate 재검증
 .\scripts\publish-gate-regression.ps1
@@ -35,6 +39,7 @@ Get-Content .\outputs\day0\pack_01\caption_core9.json | .\scripts\publish-gate.p
 ```
 
 ### D. 기록 (2분)
+
 ```powershell
 # TASK.md에 오늘 한 줄 제안 + 접촉/제안/전환 + 내일 TiCo 작성
 notepad .\TASK.md
@@ -46,6 +51,7 @@ notepad .\TASK.md
 
 ```markdown
 ## Today's Tasks
+
 - [ ] TiCo 1개 생성
 - [ ] Publish Gate Regression 통과
 - [ ] Pack 1개 생성
@@ -90,16 +96,19 @@ Get-Content .\outputs\day0\pack_01\caption_core9.json | .\scripts\publish-gate.p
 ## 📊 Weekly Loop (매주 45~90분)
 
 ### 1. Policy Snapshot
+
 ```powershell
 .\scripts\policy-update.ps1 -Action update
 .\scripts\policy-update.ps1 -Action summarize
 ```
 
 ### 2. Publish Gate 회귀케이스 5개 추가
+
 - 실패 로그에서 추출
 - `scripts/publish-gate-regression.ps1`에 추가
 
 ### 3. 승자 분석
+
 - 콘텐츠: 상위 20% 포맷 1개만 확장
 - 앱: 핵심행동 전환 병목 1개만 개선
 - 리서치: Authority/Timeliness 가중치 프리셋 재튜닝
@@ -107,9 +116,11 @@ Get-Content .\outputs\day0\pack_01\caption_core9.json | .\scripts\publish-gate.p
 ---
 
 ## 🎯 Priority Formula
+
 `(문제의 크기 × 지불의지 × 반복성) ÷ 투입시간 ≥ 3`
 
 ### Today's Priority
+
 1. Pack 01 Publish Gate 통과
 2. Pack 01 배포 준비
 3. 회귀 테스트 1개 이상 통과
@@ -147,22 +158,28 @@ packing-wins-lab/
 ## 🔄 Troubleshooting
 
 ### Problem: Publish Gate 통과 실패
+
 **Diagnosis**:
+
 1. Disclosure 있는지 확인
 2. Link count == 1인지 확인
 3. Risk claims 있는지 확인
 
 **Solution**:
+
 ```powershell
 # 자동 수정
 Get-Content .\outputs\day0\pack_01\caption_core9.json | .\scripts\publish-gate.ps1 -Mode "DryRun"
 ```
 
 ### Problem: Reddit Publish 실패
+
 **Diagnosis**:
+
 - Reddit Draft-only 체크
 
 **Solution**:
+
 ```powershell
 # Reddit publish = false 확인
 Select-String -Path .\ops\DISTRIBUTION_RULES.md -Pattern "reddit\.publish\s*=\s*false"
@@ -172,17 +189,18 @@ Select-String -Path .\ops\DISTRIBUTION_RULES.md -Pattern "reddit\.publish\s*=\s*
 
 ## 📚 Reference Documents
 
-| Document | Purpose | Location |
-|----------|---------|----------|
-| RUNBOOK_DAY0.md | Day 0 부팅 가이드 | 프로젝트 루트 |
-| SLASH_COMMANDS.md | 슬래시 커맨드 치트시트 | 프로젝트 루트 |
-| ONE_LINER_COMMANDS.md | 1줄 커맨드 모음 | 프로젝트 루트 |
-| BACKLOG.md | 백로그 (30개) | 프로젝트 루트 |
-| TASK.md | 오늘 할 일 | 프로젝트 루트 |
+| Document              | Purpose                | Location      |
+| --------------------- | ---------------------- | ------------- |
+| RUNBOOK_DAY0.md       | Day 0 부팅 가이드      | 프로젝트 루트 |
+| SLASH_COMMANDS.md     | 슬래시 커맨드 치트시트 | 프로젝트 루트 |
+| ONE_LINER_COMMANDS.md | 1줄 커맨드 모음        | 프로젝트 루트 |
+| BACKLOG.md            | 백로그 (30개)          | 프로젝트 루트 |
+| TASK.md               | 오늘 할 일             | 프로젝트 루트 |
 
 ---
 
 ## Last Updated
+
 **Date**: 2026-01-08
 **Version**: v1.0
 **Status**: Daily Loop Ready

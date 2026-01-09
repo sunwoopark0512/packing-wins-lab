@@ -45,47 +45,59 @@ const ExportModal: React.FC<ExportModalProps> = ({ isOpen, onClose, data }) => {
   }
 
   const exportFormats = [
-    { value: 'csv' as const, label: 'CSV', icon: FileText, description: 'Spreadsheet compatible format' },
-    { value: 'json' as const, label: 'JSON', icon: FileJson, description: 'Developer-friendly format' },
+    {
+      value: 'csv' as const,
+      label: 'CSV',
+      icon: FileText,
+      description: 'Spreadsheet compatible format',
+    },
+    {
+      value: 'json' as const,
+      label: 'JSON',
+      icon: FileJson,
+      description: 'Developer-friendly format',
+    },
     { value: 'pdf' as const, label: 'PDF', icon: FileDown, description: 'Print-ready document' },
   ]
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl w-full max-w-lg animate-fade-in">
+    <div className='fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4'>
+      <div className='bg-white dark:bg-gray-800 rounded-xl shadow-2xl w-full max-w-lg animate-fade-in'>
         {/* Success state */}
         {showSuccess ? (
-          <div className="p-12 text-center">
-            <div className="w-20 h-20 mx-auto mb-4 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center">
-              <Check size={40} className="text-green-600 dark:text-green-400" />
+          <div className='p-12 text-center'>
+            <div className='w-20 h-20 mx-auto mb-4 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center'>
+              <Check size={40} className='text-green-600 dark:text-green-400' />
             </div>
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Export Successful!</h3>
-            <p className="text-gray-600 dark:text-gray-400">Your file has been downloaded.</p>
+            <h3 className='text-xl font-bold text-gray-900 dark:text-white mb-2'>
+              Export Successful!
+            </h3>
+            <p className='text-gray-600 dark:text-gray-400'>Your file has been downloaded.</p>
           </div>
         ) : (
           <>
             {/* Header */}
-            <div className="p-6 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <Download size={20} className="text-[var(--primary)]" />
-                <h2 className="text-lg font-bold text-gray-900 dark:text-white">Export Data</h2>
+            <div className='p-6 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between'>
+              <div className='flex items-center gap-2'>
+                <Download size={20} className='text-[var(--primary)]' />
+                <h2 className='text-lg font-bold text-gray-900 dark:text-white'>Export Data</h2>
               </div>
               <button
                 onClick={onClose}
-                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                className='p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors'
               >
-                <X size={20} className="text-gray-500" />
+                <X size={20} className='text-gray-500' />
               </button>
             </div>
 
             {/* Content */}
-            <div className="p-6 space-y-6">
+            <div className='p-6 space-y-6'>
               {/* Format Selection */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
+                <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3'>
                   Export Format
                 </label>
-                <div className="grid grid-cols-3 gap-3">
+                <div className='grid grid-cols-3 gap-3'>
                   {exportFormats.map((item) => {
                     const Icon = item.icon
                     return (
@@ -102,7 +114,9 @@ const ExportModal: React.FC<ExportModalProps> = ({ isOpen, onClose, data }) => {
                           size={24}
                           className={`mx-auto mb-2 ${format === item.value ? 'text-[var(--primary)]' : 'text-gray-500'}`}
                         />
-                        <div className="text-sm font-medium text-gray-900 dark:text-white">{item.label}</div>
+                        <div className='text-sm font-medium text-gray-900 dark:text-white'>
+                          {item.label}
+                        </div>
                       </button>
                     )
                   })}
@@ -111,16 +125,16 @@ const ExportModal: React.FC<ExportModalProps> = ({ isOpen, onClose, data }) => {
 
               {/* Include Analytics */}
               <div>
-                <label className="flex items-center justify-between cursor-pointer">
-                  <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                <label className='flex items-center justify-between cursor-pointer'>
+                  <span className='text-sm font-medium text-gray-700 dark:text-gray-300'>
                     Include Analytics Data
                   </span>
-                  <div className="relative">
+                  <div className='relative'>
                     <input
-                      type="checkbox"
+                      type='checkbox'
                       checked={includeAnalytics}
                       onChange={(e) => setIncludeAnalytics(e.target.checked)}
-                      className="sr-only"
+                      className='sr-only'
                     />
                     <div
                       className={`w-11 h-6 rounded-full transition-colors ${
@@ -135,22 +149,24 @@ const ExportModal: React.FC<ExportModalProps> = ({ isOpen, onClose, data }) => {
                     </div>
                   </div>
                 </label>
-                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                <p className='text-xs text-gray-500 dark:text-gray-400 mt-1'>
                   Include views, engagement, and other analytics metrics
                 </p>
               </div>
 
               {/* Date Range */}
               <div>
-                <label className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
+                <label className='flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-300 mb-3'>
                   <Calendar size={16} />
                   Date Range (Optional)
                 </label>
-                <div className="grid grid-cols-2 gap-3">
+                <div className='grid grid-cols-2 gap-3'>
                   <div>
-                    <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">From</label>
+                    <label className='block text-xs text-gray-500 dark:text-gray-400 mb-1'>
+                      From
+                    </label>
                     <input
-                      type="date"
+                      type='date'
                       value={dateRange.start?.toISOString().split('T')[0] || ''}
                       onChange={(e) =>
                         setDateRange({
@@ -158,13 +174,15 @@ const ExportModal: React.FC<ExportModalProps> = ({ isOpen, onClose, data }) => {
                           start: e.target.value ? new Date(e.target.value) : undefined,
                         })
                       }
-                      className="input"
+                      className='input'
                     />
                   </div>
                   <div>
-                    <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">To</label>
+                    <label className='block text-xs text-gray-500 dark:text-gray-400 mb-1'>
+                      To
+                    </label>
                     <input
-                      type="date"
+                      type='date'
                       value={dateRange.end?.toISOString().split('T')[0] || ''}
                       onChange={(e) =>
                         setDateRange({
@@ -172,38 +190,39 @@ const ExportModal: React.FC<ExportModalProps> = ({ isOpen, onClose, data }) => {
                           end: e.target.value ? new Date(e.target.value) : undefined,
                         })
                       }
-                      className="input"
+                      className='input'
                     />
                   </div>
                 </div>
               </div>
 
               {/* Preview */}
-              <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-4">
-                <div className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+              <div className='bg-gray-50 dark:bg-gray-900 rounded-lg p-4'>
+                <div className='text-sm text-gray-600 dark:text-gray-400 space-y-1'>
                   <p>
-                    <span className="font-medium">Total items:</span> {data.length}
+                    <span className='font-medium'>Total items:</span> {data.length}
                   </p>
                   <p>
-                    <span className="font-medium">Format:</span> {format.toUpperCase()}
+                    <span className='font-medium'>Format:</span> {format.toUpperCase()}
                   </p>
                   <p>
-                    <span className="font-medium">Analytics:</span> {includeAnalytics ? 'Included' : 'Excluded'}
+                    <span className='font-medium'>Analytics:</span>{' '}
+                    {includeAnalytics ? 'Included' : 'Excluded'}
                   </p>
                 </div>
               </div>
             </div>
 
             {/* Footer */}
-            <div className="p-6 border-t border-gray-200 dark:border-gray-700">
+            <div className='p-6 border-t border-gray-200 dark:border-gray-700'>
               <button
                 onClick={handleExport}
                 disabled={isExporting || data.length === 0}
-                className="w-full btn btn-primary flex items-center justify-center gap-2"
+                className='w-full btn btn-primary flex items-center justify-center gap-2'
               >
                 {isExporting ? (
                   <>
-                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    <div className='w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin' />
                     Exporting...
                   </>
                 ) : (

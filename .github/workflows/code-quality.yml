@@ -2,38 +2,38 @@ name: Code Quality Checks
 
 on:
   push:
-    branches: [ main, release/** ]
+    branches: [main, release/**]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   code-quality:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
-    - name: Install dependencies
-      # Use npm ci for clean install, but fallback to install if package-lock is missing or incompatible
-      run: |
-        if [ -f package-lock.json ]; then
-          npm ci --legacy-peer-deps
-        else
-          npm install --legacy-peer-deps
-        fi
+      - name: Install dependencies
+        # Use npm ci for clean install, but fallback to install if package-lock is missing or incompatible
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci --legacy-peer-deps
+          else
+            npm install --legacy-peer-deps
+          fi
 
-    - name: Run ESLint
-      # Run lint if script exists, otherwise skip smoothly
-      run: |
-        if npm run | grep -q "lint"; then
-          npm run lint
-        else
-          echo "Lint script not found, running npx eslint directly..."
-          npx eslint . --ext .js,.jsx,.ts,.tsx --quiet || true
-        fi
+      - name: Run ESLint
+        # Run lint if script exists, otherwise skip smoothly
+        run: |
+          if npm run | grep -q "lint"; then
+            npm run lint
+          else
+            echo "Lint script not found, running npx eslint directly..."
+            npx eslint . --ext .js,.jsx,.ts,.tsx --quiet || true
+          fi

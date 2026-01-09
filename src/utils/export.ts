@@ -6,7 +6,16 @@ import { Content, ExportOptions } from '@/types'
 export const exportToCSV = (data: Content[], filename: string = 'export.csv') => {
   if (!data.length) return
 
-  const headers = ['Title', 'Status', 'Platform', 'Author', 'Created', 'Updated', 'Views', 'Engagement']
+  const headers = [
+    'Title',
+    'Status',
+    'Platform',
+    'Author',
+    'Created',
+    'Updated',
+    'Views',
+    'Engagement',
+  ]
   const rows = data.map((item) => [
     `"${item.title.replace(/"/g, '""')}"`,
     item.status,
@@ -45,7 +54,7 @@ export const exportToPDF = (data: Content[], filename: string = 'export.pdf') =>
 
   data.forEach((item, index) => {
     pdfContent += `[${index + 1}] ${item.title}\n`
-    pdfContent += `${`-`.repeat(80)  }\n`
+    pdfContent += `${`-`.repeat(80)}\n`
     pdfContent += `Status: ${item.status}\n`
     pdfContent += `Platform: ${item.platform}\n`
     pdfContent += `Author: ${item.author}\n`
@@ -64,7 +73,9 @@ export const exportToPDF = (data: Content[], filename: string = 'export.pdf') =>
   // For proper PDF generation, use jsPDF or react-pdf
   downloadFile(pdfContent, filename.replace('.pdf', '.txt'), 'text/plain;charset=utf-8;')
 
-  console.warn('Note: PDF export currently generates a text file. Use jsPDF for proper PDF generation.')
+  console.warn(
+    'Note: PDF export currently generates a text file. Use jsPDF for proper PDF generation.'
+  )
 }
 
 /**
