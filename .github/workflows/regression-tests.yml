@@ -19,20 +19,37 @@ jobs:
     - name: Run Publish Gate Regression
       shell: pwsh
       run: |
-        .\scripts\publish-gate-regression.ps1 -Verbose
+        Write-Host "Starting Publish Gate Regression..."
+        try {
+          .\scripts\publish-gate-regression.ps1 -Verbose
+        } catch {
+          Write-Host "Error running publish-gate-regression: $_"
+          exit 1
+        }
 
     - name: Run Verify Feedback Pack
       shell: pwsh
       run: |
-        .\scripts\verify-feedback-pack.ps1 -Verbose
+        Write-Host "Starting Verify Feedback Pack..."
+        try {
+          .\scripts\verify-feedback-pack.ps1 -Verbose
+        } catch {
+          Write-Host "Error running verify-feedback-pack: $_"
+          exit 1
+        }
 
     - name: Run Smoke Test
       shell: pwsh
       run: |
         if (Test-Path ".\scripts\smoke-test.ps1") {
-          .\scripts\smoke-test.ps1
+            try {
+                .\scripts\smoke-test.ps1
+            } catch {
+                Write-Host "Error running smoke-test: $_"
+                exit 1
+            }
         } else {
-          Write-Host "Smoke test not found, skipping..."
+            Write-Host "Smoke test not found, skipping..."
         }
 
     - name: Generate Report
@@ -44,4 +61,3 @@ jobs:
         Write-Host "Regression Test Report"
         Write-Host "Date: $date"
         Write-Host "Status: $status"
-        Write-Host "Exit Code: $LASTEXITCODE"
