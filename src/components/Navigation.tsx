@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+
 import { LayoutDashboard, Settings, FileText, BarChart3, Moon, Sun, Menu, X } from 'lucide-react'
 import useStore from '@/store/useStore'
 
@@ -21,12 +21,11 @@ const Navigation: React.FC = () => {
       >
         {sidebarOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
- 
+
       {/* Sidebar */}
       <aside
-        className={`fixed lg:static inset-y-0 left-0 z-40 w-64 bg-white dark:bg-gray-800 shadow-lg transform transition-transform duration-300 ease-in-out ${
-          sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-        } lg:translate-x-0`}
+        className={`fixed lg:static inset-y-0 left-0 z-40 w-64 bg-white dark:bg-gray-800 shadow-lg transform transition-transform duration-300 ease-in-out ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'
+          } lg:translate-x-0`}
       >
         <div className="flex flex-col h-full">
           {/* Logo */}
@@ -36,12 +35,12 @@ const Navigation: React.FC = () => {
             </h1>
             <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Multi-platform publishing</p>
           </div>
- 
+
           {/* Navigation */}
           <nav className="flex-1 p-4 space-y-2">
             {navItems.map((item) => {
               const Icon = item.icon
- 
+
               return (
                 <a
                   key={item.path}
@@ -54,7 +53,7 @@ const Navigation: React.FC = () => {
               )
             })}
           </nav>
- 
+
           {/* Theme toggle */}
           <div className="p-4 border-t border-gray-200 dark:border-gray-700">
             <button

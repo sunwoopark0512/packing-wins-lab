@@ -30,6 +30,7 @@ const Dashboard: React.FC = () => {
         'Cybersecurity Best Practices',
       ][i % 10],
       body: 'This is sample content for demonstration purposes...',
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       status: ['draft', 'published', 'scheduled'][i % 3] as any,
       platform: ['Twitter', 'LinkedIn', 'Facebook', 'Instagram', 'Blog'][i % 5],
       createdAt: new Date(Date.now() - i * 24 * 60 * 60 * 1000),
@@ -40,11 +41,11 @@ const Dashboard: React.FC = () => {
       analytics:
         i % 3 === 1
           ? {
-              views: Math.floor(Math.random() * 5000) + 1000,
-              clicks: Math.floor(Math.random() * 500) + 100,
-              shares: Math.floor(Math.random() * 100) + 10,
-              engagement: Math.floor(Math.random() * 200) + 50,
-            }
+            views: Math.floor(Math.random() * 5000) + 1000,
+            clicks: Math.floor(Math.random() * 500) + 100,
+            shares: Math.floor(Math.random() * 100) + 10,
+            engagement: Math.floor(Math.random() * 200) + 50,
+          }
           : undefined,
     }))
 
@@ -244,13 +245,12 @@ const Dashboard: React.FC = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <span
-                    className={`px-3 py-1 rounded-full text-xs font-medium ${
-                      item.status === 'published'
+                    className={`px-3 py-1 rounded-full text-xs font-medium ${item.status === 'published'
                         ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300'
                         : item.status === 'scheduled'
-                        ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300'
-                        : 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300'
-                    }`}
+                          ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300'
+                          : 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300'
+                      }`}
                   >
                     {item.status}
                   </span>
