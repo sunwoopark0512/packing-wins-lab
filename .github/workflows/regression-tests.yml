@@ -19,7 +19,7 @@ jobs:
     - name: Run Publish Gate Regression
       shell: pwsh
       run: |
-        .\scripts\publish-gate-regression.ps1
+        .\scripts\publish-gate-regression.ps1 -Verbose
 
     - name: Run Verify Feedback Pack
       shell: pwsh
