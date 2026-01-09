@@ -1,19 +1,82 @@
-﻿True
+======================================================
+Feedback Playbook v1.1.1 Verification Script
+======================================================
+
+1. Checking Core Documentation...
+-----------------------------------
+[✓ PASS] RUNBOOK.md exists
 True
+[✓ PASS] RUNBOOK_DAY0.md exists
 True
+[✓ PASS] TASK.md exists
 True
+[✓ PASS] README.md exists
 True
+
+2. Checking Scripts...
+-----------------------------------
+[✓ PASS] publish-gate.ps1 exists
 True
+[✓ PASS] publish-gate-regression.ps1 exists
 True
+[✓ PASS] smoke-test.ps1 exists
 True
+[✓ PASS] run.ps1 exists
 True
+[✓ PASS] policy-update.ps1 exists
 True
+[✓ PASS] generate_day0_packs.ps1 exists
 True
+
+3. Checking Evaluation Assets...
+-----------------------------------
+[✓ PASS] eval/golden_set.jsonl exists
 True
+[✓ PASS] eval/regression_cases_local.jsonl exists or will be auto-created
 True
+
+4. Checking Output Structure...
+-----------------------------------
+[✓ PASS] outputs/ directory exists
 True
+[✓ PASS] outputs/day0/ directory exists or will be created
 True
+
+5. Running Script Tests...
+-----------------------------------
+Running Regression Tests...
+Script: C:\Users\sunwo\OneDrive\wrok\projects\packing-wins-lab\scripts\publish-gate.ps1
+Cases: C:\Users\sunwo\OneDrive\wrok\projects\packing-wins-lab\scripts\regression_cases_local.jsonl
+Running Publish Gate for tiktok...
+[PASS] Spam
+Running Publish Gate for tiktok...
+[PASS] Valid
+----------------
+Total: 2, Passed: 2, Failed: 0
+[✓ PASS] publish-gate-regression.ps1 runs successfully
 True
+
+6. Checking Documentation Content...
+-----------------------------------
+[✓ PASS] RUNBOOK.md contains Daily Loop section
 True
+[✓ PASS] RUNBOOK_DAY0.md contains boot instructions
 True
+
+7. Checking Git Repository Status...
+-----------------------------------
+[✓ PASS] .gitignore exists
 True
+[✓ PASS] Git repository initialized
+True
+
+======================================================
+Verification Summary
+======================================================
+
+Total Checks: 19
+Passed: 19
+Failed: 0
+
+✅ VERIFICATION PASSED
+Feedback Playbook v1.1.1 is ready for deployment!
