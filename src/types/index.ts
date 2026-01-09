@@ -50,8 +50,8 @@ export interface FilterOptions {
   status?: string[]
   platform?: string[]
   dateRange?: {
-    start: Date
-    end: Date
+    start?: Date
+    end?: Date
   }
   author?: string
   tags?: string[]
@@ -62,8 +62,8 @@ export interface ExportOptions {
   format: 'csv' | 'json' | 'pdf'
   includeAnalytics: boolean
   dateRange?: {
-    start: Date
-    end: Date
+    start?: Date
+    end?: Date
   }
 }
 

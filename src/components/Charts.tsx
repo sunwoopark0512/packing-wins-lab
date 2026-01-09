@@ -9,7 +9,7 @@ export const PieChart: React.FC<PieChartProps> = ({ data, size = 200 }) => {
   const total = data.reduce((sum, item) => sum + item.value, 0)
   let currentAngle = 0
 
-  const slices = data.map((item, index) => {
+  const slices = data.map((item) => {
     const percentage = item.value / total
     const angle = percentage * 2 * Math.PI
     const x1 = size / 2 + (size / 2 - 10) * Math.cos(currentAngle)

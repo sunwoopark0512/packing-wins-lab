@@ -211,9 +211,10 @@ const Dashboard: React.FC = () => {
         <div className="card mb-8">
           <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Engagement Over Time</h3>
           <LineChart
-            data={chartData.engagement.labels.map((label, i) => ({
+            data={chartData.engagement.labels.map((label: string, i: number) => ({
               label,
-              value: chartData.engagement.datasets[0].data[i] || 0,
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              value: (chartData.engagement.datasets[0].data as any[])[i] || 0,
             }))}
             height={300}
             width={1000}
@@ -246,10 +247,10 @@ const Dashboard: React.FC = () => {
                 <div className="flex items-center gap-2">
                   <span
                     className={`px-3 py-1 rounded-full text-xs font-medium ${item.status === 'published'
-                        ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300'
-                        : item.status === 'scheduled'
-                          ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300'
-                          : 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300'
+                      ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300'
+                      : item.status === 'scheduled'
+                        ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300'
+                        : 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300'
                       }`}
                   >
                     {item.status}

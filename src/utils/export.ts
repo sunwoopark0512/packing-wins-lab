@@ -45,7 +45,7 @@ export const exportToPDF = (data: Content[], filename: string = 'export.pdf') =>
 
   data.forEach((item, index) => {
     pdfContent += `[${index + 1}] ${item.title}\n`
-    pdfContent += `-`.repeat(80) + '\n'
+    pdfContent += `${`-`.repeat(80)  }\n`
     pdfContent += `Status: ${item.status}\n`
     pdfContent += `Platform: ${item.platform}\n`
     pdfContent += `Author: ${item.author}\n`
