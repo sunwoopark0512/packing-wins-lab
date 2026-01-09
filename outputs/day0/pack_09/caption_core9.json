@@ -1,0 +1,22 @@
+﻿{
+  "common": {
+    "disclosure": {
+      "required": true,
+      "text_ko": "#광고 #여행꿀팁",
+      "text_en": "#ad #travelhacks",
+      "placement": "start"
+    },
+    "links": [ { "url": "https://YOUR-LINK-HUB.example", "placement": "bio/comment" } ]
+  },
+  "platforms": {
+    "tiktok": { "post_text": "Clean vs Dirty mix? Expandable laundry sack separates odors. #packinghack", "cta": "Link in bio" },
+    "youtube_shorts": { "post_text": "Clean vs Dirty mix? No more Stinky socks touching fresh tees.!", "cta": "Link in pinned comment" },
+    "instagram_reels": { "post_text": "Stinky socks touching fresh tees. Solved. ✈️", "cta": "Link in bio" },
+    "facebook_reels": { "post_text": "Travel smart: Laundry Bag", "cta": "Link in comments" },
+    "threads": { "post_text": "Clean vs Dirty mix?", "cta": "Link in bio" },
+    "x": { "post_text": "Before/After: Laundry Bag. #travel", "cta": "Link below" },
+    "pinterest": { "post_text": "Save this packing hack: Laundry Bag", "cta": "Visit link" },
+    "linkedin": { "post_text": "Business travel efficiency: Laundry Bag", "cta": "Link in comments" },
+    "blog": { "post_text": "Full review: Why I use this Laundry Bag.", "cta": "Read more" }
+  }
+}

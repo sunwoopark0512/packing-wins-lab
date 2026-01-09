@@ -1,0 +1,22 @@
+﻿{
+  "common": {
+    "disclosure": {
+      "required": true,
+      "text_ko": "#광고 #여행꿀팁",
+      "text_en": "#ad #travelhacks",
+      "placement": "start"
+    },
+    "links": [ { "url": "https://YOUR-LINK-HUB.example", "placement": "bio/comment" } ]
+  },
+  "platforms": {
+    "tiktok": { "post_text": "Packing a winter coat? Roll-up vacuum bag (no pump needed). #packinghack", "cta": "Link in bio" },
+    "youtube_shorts": { "post_text": "Packing a winter coat? No more Takes up half the bag.!", "cta": "Link in pinned comment" },
+    "instagram_reels": { "post_text": "Takes up half the bag. Solved. ✈️", "cta": "Link in bio" },
+    "facebook_reels": { "post_text": "Travel smart: Vacuum Bag", "cta": "Link in comments" },
+    "threads": { "post_text": "Packing a winter coat?", "cta": "Link in bio" },
+    "x": { "post_text": "Before/After: Vacuum Bag. #travel", "cta": "Link below" },
+    "pinterest": { "post_text": "Save this packing hack: Vacuum Bag", "cta": "Visit link" },
+    "linkedin": { "post_text": "Business travel efficiency: Vacuum Bag", "cta": "Link in comments" },
+    "blog": { "post_text": "Full review: Why I use this Vacuum Bag.", "cta": "Read more" }
+  }
+}

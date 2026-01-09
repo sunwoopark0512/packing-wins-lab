@@ -1,0 +1,22 @@
+﻿{
+  "common": {
+    "disclosure": {
+      "required": true,
+      "text_ko": "#광고 #여행꿀팁",
+      "text_en": "#ad #travelhacks",
+      "placement": "start"
+    },
+    "links": [ { "url": "https://YOUR-LINK-HUB.example", "placement": "bio/comment" } ]
+  },
+  "platforms": {
+    "tiktok": { "post_text": "Cable spaghetti? Elastic loops for every cable. #packinghack", "cta": "Link in bio" },
+    "youtube_shorts": { "post_text": "Cable spaghetti? No more Chargers tangled everywhere.!", "cta": "Link in pinned comment" },
+    "instagram_reels": { "post_text": "Chargers tangled everywhere. Solved. ✈️", "cta": "Link in bio" },
+    "facebook_reels": { "post_text": "Travel smart: Tech Pouch", "cta": "Link in comments" },
+    "threads": { "post_text": "Cable spaghetti?", "cta": "Link in bio" },
+    "x": { "post_text": "Before/After: Tech Pouch. #travel", "cta": "Link below" },
+    "pinterest": { "post_text": "Save this packing hack: Tech Pouch", "cta": "Visit link" },
+    "linkedin": { "post_text": "Business travel efficiency: Tech Pouch", "cta": "Link in comments" },
+    "blog": { "post_text": "Full review: Why I use this Tech Pouch.", "cta": "Read more" }
+  }
+}

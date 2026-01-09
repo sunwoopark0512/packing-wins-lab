@@ -1,0 +1,22 @@
+﻿{
+  "common": {
+    "disclosure": {
+      "required": true,
+      "text_ko": "#광고 #여행꿀팁",
+      "text_en": "#ad #travelhacks",
+      "placement": "start"
+    },
+    "links": [ { "url": "https://YOUR-LINK-HUB.example", "placement": "bio/comment" } ]
+  },
+  "platforms": {
+    "tiktok": { "post_text": "Shampoo explosion nightmare? Waterproof hanging bag keeps spills contained. #packinghack", "cta": "Link in bio" },
+    "youtube_shorts": { "post_text": "Shampoo explosion nightmare? No more Ruined clothes from leaks.!", "cta": "Link in pinned comment" },
+    "instagram_reels": { "post_text": "Ruined clothes from leaks. Solved. ✈️", "cta": "Link in bio" },
+    "facebook_reels": { "post_text": "Travel smart: Toiletry Bag", "cta": "Link in comments" },
+    "threads": { "post_text": "Shampoo explosion nightmare?", "cta": "Link in bio" },
+    "x": { "post_text": "Before/After: Toiletry Bag. #travel", "cta": "Link below" },
+    "pinterest": { "post_text": "Save this packing hack: Toiletry Bag", "cta": "Visit link" },
+    "linkedin": { "post_text": "Business travel efficiency: Toiletry Bag", "cta": "Link in comments" },
+    "blog": { "post_text": "Full review: Why I use this Toiletry Bag.", "cta": "Read more" }
+  }
+}

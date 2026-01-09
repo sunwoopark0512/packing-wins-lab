@@ -1,0 +1,55 @@
+{
+    "name": "content-automation-9platform-v2",
+    "nodes": [
+        {
+            "name": "Trigger",
+            "type": "webhook",
+            "params": {
+                "path": "content-in"
+            }
+        },
+        {
+            "name": "ValidateInput",
+            "type": "function",
+            "params": {
+                "schema": "ContentItem"
+            }
+        },
+        {
+            "name": "Transcribe",
+            "type": "llm",
+            "params": {
+                "model": "PLACEHOLDER_GOOGLE_FAST_MODEL_ID"
+            }
+        },
+        {
+            "name": "Rewrite",
+            "type": "llm",
+            "params": {
+                "model": "PLACEHOLDER_GOOGLE_FAST_MODEL_ID"
+            }
+        },
+        {
+            "name": "Captions",
+            "type": "llm",
+            "params": {
+                "model": "PLACEHOLDER_GOOGLE_FAST_MODEL_ID"
+            }
+        },
+        {
+            "name": "UploadRouter",
+            "type": "switch",
+            "params": {
+                "by": "platform"
+            }
+        },
+        {
+            "name": "LogPublishJob",
+            "type": "db",
+            "params": {
+                "schema": "PublishJob"
+            }
+        }
+    ],
+    "connections": []
+}

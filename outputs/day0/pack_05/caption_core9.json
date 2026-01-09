@@ -1,0 +1,22 @@
+﻿{
+  "common": {
+    "disclosure": {
+      "required": true,
+      "text_ko": "#광고 #여행꿀팁",
+      "text_en": "#ad #travelhacks",
+      "placement": "start"
+    },
+    "links": [ { "url": "https://YOUR-LINK-HUB.example", "placement": "bio/comment" } ]
+  },
+  "platforms": {
+    "tiktok": { "post_text": "Passport panic at airport? RFID blocker wallet holds everything secure. #packinghack", "cta": "Link in bio" },
+    "youtube_shorts": { "post_text": "Passport panic at airport? No more Can't find docs in queue.!", "cta": "Link in pinned comment" },
+    "instagram_reels": { "post_text": "Can't find docs in queue. Solved. ✈️", "cta": "Link in bio" },
+    "facebook_reels": { "post_text": "Travel smart: Travel Wallet", "cta": "Link in comments" },
+    "threads": { "post_text": "Passport panic at airport?", "cta": "Link in bio" },
+    "x": { "post_text": "Before/After: Travel Wallet. #travel", "cta": "Link below" },
+    "pinterest": { "post_text": "Save this packing hack: Travel Wallet", "cta": "Visit link" },
+    "linkedin": { "post_text": "Business travel efficiency: Travel Wallet", "cta": "Link in comments" },
+    "blog": { "post_text": "Full review: Why I use this Travel Wallet.", "cta": "Read more" }
+  }
+}

@@ -1,0 +1,11 @@
+offer_id,offer_name,landing_url,affiliate_url,disclosure_required,notes
+OFFER_01,Compression Packing Cubes,https://YOUR-LINK-HUB.example/cubes,,true,Space saver
+OFFER_02,Hanging Toiletry Bag,https://YOUR-LINK-HUB.example/toiletry,,true,No leaks
+OFFER_03,Travel Shoe Pouch,https://YOUR-LINK-HUB.example/shoes,,true,Clean clothes
+OFFER_04,Tech Organizer Pouch,https://YOUR-LINK-HUB.example/tech,,true,No tangles
+OFFER_05,RFID Travel Wallet,https://YOUR-LINK-HUB.example/wallet,,true,Security
+OFFER_06,Winter Coat Vacuum Bag,https://YOUR-LINK-HUB.example/vacuum,,true,Heavy packing
+OFFER_07,Hard Shell Makeup Case,https://YOUR-LINK-HUB.example/makeup,,true,Protect powder
+OFFER_08,Jewelry Roll Organizer,https://YOUR-LINK-HUB.example/jewelry,,true,No knots
+OFFER_09,Travel Laundry Bag,https://YOUR-LINK-HUB.example/laundry,,true,Separate odors
+OFFER_10,Digital Packing List,https://YOUR-LINK-HUB.example/list,,true,Never forget

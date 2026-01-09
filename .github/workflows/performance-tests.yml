@@ -1,0 +1,79 @@
+name: Performance Tests
+
+on:
+  push:
+    branches: [ main, release/** ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Run daily at 2 AM UTC
+    - cron: '0 2 * * *'
+
+jobs:
+  performance-tests:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up PowerShell
+      uses: actions/setup-powershell@v1
+
+    - name: Measure Pack Generation Performance
+      shell: pwsh
+      run: |
+        Write-Host "Measuring pack generation performance..."
+        $startTime = Get-Date
+
+        if (Test-Path ".\scripts\generate_day0_packs.ps1") {
+          try {
+            .\scripts\generate_day0_packs.ps1
+            $endTime = Get-Date
+            $duration = ($endTime - $startTime).TotalSeconds
+            Write-Host "Pack generation completed in $duration seconds"
+          }
+          catch {
+            Write-Host "Pack generation failed: $($_.Exception.Message)"
+            exit 1
+          }
+        } else {
+          Write-Host "Pack generation script not found, skipping..."
+        }
+
+    - name: Measure Gate Regression Performance
+      shell: pwsh
+      run: |
+        Write-Host "Measuring gate regression performance..."
+        $startTime = Get-Date
+
+        .\scripts\publish-gate-regression.ps1
+        $exitCode = $LASTEXITCODE
+
+        $endTime = Get-Date
+        $duration = ($endTime - $startTime).TotalSeconds
+        Write-Host "Gate regression completed in $duration seconds with exit code $exitCode"
+
+        if ($exitCode -ne 0) {
+          Write-Host "Gate regression failed"
+          exit 1
+        }
+
+    - name: Performance Threshold Checks
+      shell: pwsh
+      run: |
+        Write-Host "Checking performance thresholds..."
+        Write-Host "Pack generation should complete within 60 seconds"
+        Write-Host "Gate regression should complete within 30 seconds"
+        Write-Host "Note: Actual thresholds should be configured based on baseline measurements"
+
+    - name: Generate Performance Report
+      if: always()
+      shell: pwsh
+      run: |
+        $date = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+        Write-Host "Performance Test Report"
+        Write-Host "Date: $date"
+        Write-Host "Job: ${{ github.job }}"
+        Write-Host "Run: ${{ github.run_id }}"
+        Write-Host "Status: ${{ job.status }}"

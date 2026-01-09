@@ -1,0 +1,22 @@
+﻿{
+  "common": {
+    "disclosure": {
+      "required": true,
+      "text_ko": "#광고 #여행꿀팁",
+      "text_en": "#ad #travelhacks",
+      "placement": "start"
+    },
+    "links": [ { "url": "https://YOUR-LINK-HUB.example", "placement": "bio/comment" } ]
+  },
+  "platforms": {
+    "tiktok": { "post_text": "Dirty soles on clean shirts? Dedicated shoe pouch isolates the dirt. #packinghack", "cta": "Link in bio" },
+    "youtube_shorts": { "post_text": "Dirty soles on clean shirts? No more Gross shoe transfers.!", "cta": "Link in pinned comment" },
+    "instagram_reels": { "post_text": "Gross shoe transfers. Solved. ✈️", "cta": "Link in bio" },
+    "facebook_reels": { "post_text": "Travel smart: Shoe Pouch", "cta": "Link in comments" },
+    "threads": { "post_text": "Dirty soles on clean shirts?", "cta": "Link in bio" },
+    "x": { "post_text": "Before/After: Shoe Pouch. #travel", "cta": "Link below" },
+    "pinterest": { "post_text": "Save this packing hack: Shoe Pouch", "cta": "Visit link" },
+    "linkedin": { "post_text": "Business travel efficiency: Shoe Pouch", "cta": "Link in comments" },
+    "blog": { "post_text": "Full review: Why I use this Shoe Pouch.", "cta": "Read more" }
+  }
+}

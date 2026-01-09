@@ -1,0 +1,2 @@
+﻿{"input_text": "spam link http://bad.com", "expected_verdict": "BLOCK", "reason": "Spam"}
+{"input_text": "Good post #ad", "expected_verdict": "PASS", "reason": "Valid"}

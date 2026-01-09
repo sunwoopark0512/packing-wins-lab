@@ -1,0 +1,22 @@
+﻿{
+  "common": {
+    "disclosure": {
+      "required": true,
+      "text_ko": "#광고 #여행꿀팁",
+      "text_en": "#ad #travelhacks",
+      "placement": "start"
+    },
+    "links": [ { "url": "https://YOUR-LINK-HUB.example", "placement": "bio/comment" } ]
+  },
+  "platforms": {
+    "tiktok": { "post_text": "Necklace knot hell? Velcro straps keep chains separate. #packinghack", "cta": "Link in bio" },
+    "youtube_shorts": { "post_text": "Necklace knot hell? No more Spent 20 mins untangling.!", "cta": "Link in pinned comment" },
+    "instagram_reels": { "post_text": "Spent 20 mins untangling. Solved. ✈️", "cta": "Link in bio" },
+    "facebook_reels": { "post_text": "Travel smart: Jewelry Roll", "cta": "Link in comments" },
+    "threads": { "post_text": "Necklace knot hell?", "cta": "Link in bio" },
+    "x": { "post_text": "Before/After: Jewelry Roll. #travel", "cta": "Link below" },
+    "pinterest": { "post_text": "Save this packing hack: Jewelry Roll", "cta": "Visit link" },
+    "linkedin": { "post_text": "Business travel efficiency: Jewelry Roll", "cta": "Link in comments" },
+    "blog": { "post_text": "Full review: Why I use this Jewelry Roll.", "cta": "Read more" }
+  }
+}

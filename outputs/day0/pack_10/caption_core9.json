@@ -1,0 +1,22 @@
+﻿{
+  "common": {
+    "disclosure": {
+      "required": true,
+      "text_ko": "#광고 #여행꿀팁",
+      "text_en": "#ad #travelhacks",
+      "placement": "start"
+    },
+    "links": [ { "url": "https://YOUR-LINK-HUB.example", "placement": "bio/comment" } ]
+  },
+  "platforms": {
+    "tiktok": { "post_text": "Forgot your toothbrush? Digital checklist you can't lose. #packinghack", "cta": "Link in bio" },
+    "youtube_shorts": { "post_text": "Forgot your toothbrush? No more Panic buying at destination.!", "cta": "Link in pinned comment" },
+    "instagram_reels": { "post_text": "Panic buying at destination. Solved. ✈️", "cta": "Link in bio" },
+    "facebook_reels": { "post_text": "Travel smart: Packing List", "cta": "Link in comments" },
+    "threads": { "post_text": "Forgot your toothbrush?", "cta": "Link in bio" },
+    "x": { "post_text": "Before/After: Packing List. #travel", "cta": "Link below" },
+    "pinterest": { "post_text": "Save this packing hack: Packing List", "cta": "Visit link" },
+    "linkedin": { "post_text": "Business travel efficiency: Packing List", "cta": "Link in comments" },
+    "blog": { "post_text": "Full review: Why I use this Packing List.", "cta": "Read more" }
+  }
+}

@@ -1,0 +1,97 @@
+name: Performance Monitoring
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Run daily at 6 AM UTC
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
+
+jobs:
+  lighthouse:
+    name: Lighthouse Performance Audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build
+
+      - name: Start application
+        run: npm run preview &
+
+      - name: Wait for application to start
+        run: sleep 10
+
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v10
+        with:
+          configPath: '.lighthouserc.json'
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+
+  bundle-analysis:
+    name: Bundle Analysis
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build with analysis
+        run: npm run build:analyze
+
+      - name: Upload bundle analysis
+        uses: actions/upload-artifact@v3
+        with:
+          name: bundle-analysis
+          path: dist/stats.html
+
+  memory-profiling:
+    name: Memory Profiling
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run memory profile
+        run: |
+          npm run build
+          node --prof dist/*.js &
+          sleep 5
+          kill %1
+          node --prof-process isolate-*.log > memory-profile.txt
+
+      - name: Upload memory profile
+        uses: actions/upload-artifact@v3
+        with:
+          name: memory-profile
+          path: memory-profile.txt

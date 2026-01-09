@@ -1,0 +1,9 @@
+﻿{"verdict": "PASS_CANDIDATE", "platform": "tiktok", "reasons": ["Disclosure present", "Link count=1"], "required_fixes": []}
+{"verdict": "PASS_CANDIDATE", "platform": "youtube_shorts", "reasons": ["Disclosure check checked", "Safe tone"], "required_fixes": []}
+{"verdict": "PASS_CANDIDATE", "platform": "instagram_reels", "reasons": ["Label used", "Visual focus"], "required_fixes": []}
+{"verdict": "PASS_CANDIDATE", "platform": "facebook_reels", "reasons": ["Spam check pass"], "required_fixes": []}
+{"verdict": "PASS_CANDIDATE", "platform": "threads", "reasons": ["Concise"], "required_fixes": []}
+{"verdict": "PASS_CANDIDATE", "platform": "x", "reasons": ["Link safe"], "required_fixes": []}
+{"verdict": "PASS_CANDIDATE", "platform": "pinterest", "reasons": ["Pin destination valid"], "required_fixes": []}
+{"verdict": "PASS_CANDIDATE", "platform": "linkedin", "reasons": ["Professional tone"], "required_fixes": []}
+{"verdict": "PASS_CANDIDATE", "platform": "blog", "reasons": ["Top disclosure present"], "required_fixes": []}
