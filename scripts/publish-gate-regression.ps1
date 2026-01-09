@@ -2,10 +2,17 @@
 # Runs a suite of test cases against publish-gate.ps1
 
 $ScriptPath = "$PSScriptRoot\publish-gate.ps1"
-$CasesPath = "$PSScriptRoot\..\..\_COMMON\eval\regression_cases.publish_gate.jsonl"
-# Fallback to local cases if _COMMON not found (stand-alone project)
-if (-not (Test-Path $CasesPath)) {
-    $CasesPath = "$PSScriptRoot\regression_cases_local.jsonl"
+$CommonCasesPath = "$PSScriptRoot\..\..\_COMMON\eval\regression_cases.publish_gate.jsonl"
+$LocalCasesPath = "$PSScriptRoot\regression_cases_local.jsonl"
+
+if (Test-Path $CommonCasesPath) {
+    $CasesPath = $CommonCasesPath
+}
+elseif (Test-Path $LocalCasesPath) {
+    $CasesPath = $LocalCasesPath
+}
+else {
+    $CasesPath = $LocalCasesPath
     @"
 {"input_text": "spam link http://bad.com", "expected_verdict": "BLOCK", "reason": "Spam"}
 {"input_text": "Good post #ad", "expected_verdict": "PASS", "reason": "Valid"}

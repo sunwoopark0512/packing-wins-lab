@@ -4,7 +4,7 @@ Param(
     [bool]$IsAffiliate = $false
 )
 
-Write-Host "Running Publish Gate for $Platform..."
+# Write-Host "Running Publish Gate for $Platform..."
 
 # Mock Logic for demonstration
 $Verdict = "PASS"
@@ -21,14 +21,14 @@ if ($IsAffiliate -and $Text -notmatch "ad|sponsored|partners") {
 }
 
 if ($Platform -eq "Reddit") {
-    Write-Host "Draft generated for Reddit. Manual approval required."
+    # Write-Host "Draft generated for Reddit. Manual approval required."
     $Verdict = "PASS (Draft Only)"
 }
 
 $Result = @{
-    verdict = $Verdict
+    verdict  = $Verdict
     platform = $Platform
-    reasons = $Reasons
+    reasons  = $Reasons
 }
 
 $Result | ConvertTo-Json
