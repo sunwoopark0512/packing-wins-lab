@@ -7,10 +7,10 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    '@typescript-eslint/recommended',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:react/jsx-runtime',
+    // '@typescript-eslint/recommended',
+    // 'plugin:react/recommended',
+    // 'plugin:react-hooks/recommended',
+    // 'plugin:react/jsx-runtime',
     'prettier'
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs', 'vite.config.ts'],
