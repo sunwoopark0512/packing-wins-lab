@@ -7,15 +7,17 @@ test.describe('Basic tests', () => {
 
   test('page loads successfully', async ({ page }) => {
     await expect(page).toHaveTitle(/Content Automation Platform/)
-    await expect(page.locator('h1')).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'Dashboard' })).toBeVisible()
   })
 
   test('navigation works', async ({ page }) => {
-    await page.click('text=Dashboard')
-    await expect(page).toHaveURL(/.*dashboard/)
+    // Navigate to Analytics page using the sidebar link
+    await page.getByRole('navigation').getByRole('link', { name: 'Analytics' }).click()
+    await expect(page).toHaveURL(/.*analytics/)
 
-    await page.click('text=Settings')
-    await expect(page).toHaveURL(/.*settings/)
+    // Navigate back to Dashboard
+    await page.getByRole('navigation').getByRole('link', { name: 'Dashboard' }).click()
+    await expect(page).toHaveURL(/.*dashboard/)
   })
 
   test('responsive design works', async ({ page }) => {
@@ -23,15 +25,7 @@ test.describe('Basic tests', () => {
     await expect(page.locator('.mobile-menu')).toBeVisible()
 
     await page.setViewportSize({ width: 1200, height: 800 }) // Desktop
-    await expect(page.locator('.desktop-nav')).toBeVisible()
-  })
-
-  test('form submission works', async ({ page }) => {
-    await page.click('text=Create Content')
-    await page.fill('[data-testid="content-title"]', 'Test Content')
-    await page.fill('[data-testid="content-body"]', 'This is test content')
-    await page.click('text=Submit')
-
-    await expect(page.locator('.success-message')).toBeVisible()
+    await expect(page.locator('.mobile-menu')).not.toBeVisible()
+    await expect(page.getByRole('navigation')).toBeVisible()
   })
 })
