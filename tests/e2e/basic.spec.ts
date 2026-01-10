@@ -17,7 +17,7 @@ test.describe('Basic tests', () => {
 
     // Navigate back to Dashboard
     await page.getByRole('navigation').getByRole('link', { name: 'Dashboard' }).click()
-    await expect(page).toHaveURL(/.*dashboard/)
+    await expect(page).toHaveURL(/.*\/$/)
   })
 
   test('responsive design works', async ({ page }) => {
